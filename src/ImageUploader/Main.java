@@ -33,13 +33,13 @@ public class Main extends Application {
          * TODO1: Set a title 'Image Uploader' for the stage
          * Hint: You can do this by using the setTitle() method of the stage class
          */
-
+        primaryStage.setTitle("Image Uploader");
 
         /*
          * TODO2: Create a button called ‘uploadButton’.The text on the button should say 'Upload Image'.
          * Hint: You can do this by creating an instance of the Button class and passing the text 'Upload Image' as an argument to the constructor.
          */
-
+        Button uploadButton = new Button("Upload Image");
 
         // Call uploadImage method on button click
         uploadButton.setOnAction(e -> uploadImage(primaryStage));
@@ -48,19 +48,19 @@ public class Main extends Application {
          * TODO3: Create a vertical box layout called ‘vbox’
          * Hint: You can do this by creating an instance of the VBox class and passing uploadButton and imageView as arguments to the constructor.
          */
-
+        VBox vbox = new VBox(uploadButton, imageView);
 
         /*
          * TODO4: Center align the contents of the vbox.
          * Hint: You can use the setAlignment method of the VBox class and use Pos.CENTER as an argument for center alignment.
          */
-
+        vbox.setAlignment(Pos.CENTER);  
 
         /*
          * TODO5: Create a scene called 'scene' using the vbox. Specify the height as 200 and width as 200.
          * Hint: You can implement this by creating an instance of the Scene class and passing vbox, height and width as arguments to the constructor.
          */
-
+        Scene scene = new Scene(vbox, 200, 200);
         primaryStage.setScene(scene);
         primaryStage.show();
     }
@@ -79,7 +79,7 @@ public class Main extends Application {
              * TODO6: Set the selected image in imageView i.e. display the image.
              * Hint: To implement this, you can use the setImage() method of ImageView and pass the selected image as an argument.
              */
-
+            imageView.setImage(image);
             // Resize the window to fit the image
             primaryStage.setWidth(image.getWidth() + 100);
             primaryStage.setHeight(image.getHeight() + 100);
